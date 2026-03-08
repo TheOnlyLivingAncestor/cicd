@@ -41,9 +41,12 @@ jobs:
       - name: Building
         run: |
           gcc operations.c simplecalculator.c -o simplecalculator
+      - name: Creating neptun.txt
+        run: |
+          echo "FRHT6P" > neptun.txt
       - name: Creating tar.gz
         run: |
-          tar -czvf simplecalculator.tar.gz simplecalculator
+          tar -czvf simplecalculator.tar.gz simplecalculator neptun.txt
       - uses: "marvinpinto/action-automatic-releases@latest"
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
