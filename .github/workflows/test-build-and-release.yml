@@ -28,7 +28,7 @@ jobs:
         uses: actions/checkout@v4
       - name: Building
         run: |
-          gcc operations.c simplecalculator.c -o simplecalculator
+          gcc simplecalculator/operations.c simplecalculator/simplecalculator.c -o simplecalculator
       - name: Creating tar.gz
         run: |
           tar -czvf simplecalculator.tar.gz simplecalculator
